@@ -4,11 +4,13 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @Data
 public class EmpResources {
-    
+
     @JsonProperty("id")
     private int id;
 
@@ -23,4 +25,9 @@ public class EmpResources {
 
     @JsonProperty("salary")
     private double salary;
+
+    @Email(message = "Email is not valid")
+    @NotEmpty(message = "Email cannot be empty")
+    @JsonProperty("email")
+    private String email;
 }

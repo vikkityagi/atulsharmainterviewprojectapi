@@ -25,5 +25,7 @@ public class EmpEntity {
     private LocalDate dob;
 
     private double salary;
+
+    private String email;
     
 }
